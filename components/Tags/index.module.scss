@@ -1,0 +1,45 @@
+@import 'vars.scss';
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+
+  .tag {
+    margin-right: 4px;
+    margin-bottom: 4px;
+    padding: 4px 8px;
+    background: #DEE2E6;
+    border-radius: 4px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #343A40;
+    white-space: nowrap;
+
+    &:last-child {
+      margin-right: 0px;
+    }
+
+    &:hover {
+      background-color: #212529;
+      color: white;
+
+      &.noMobileHover {
+        @media (max-width: $mobile-width) {
+          background-color: #DEE2E6;
+          color: #343A40;
+        }
+      }
+    }
+
+    &.active {
+      background-color: #212529;
+      color: white;
+
+      &:hover {
+        background-color: #212529;
+        color: white;
+      }
+    }
+  }
+}

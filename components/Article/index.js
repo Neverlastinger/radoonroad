@@ -2,6 +2,7 @@ import Head from 'next/head';
 import styles from './index.module.scss';
 import { formatDate } from 'app';
 import ContentfulRichText from 'components/ContentfulRichText';
+import Tags from 'components/Tags';
 
 export default function Article({ article }) {
   const canonicalUrl = `https://radoonroad.com/${article.slug}`;
@@ -25,8 +26,10 @@ export default function Article({ article }) {
       </Head>
 
       <div className={styles.title}>
-        <div className={styles.top}>
-          {/* <Tags tags={article.tags} tagClassName={styles.tag} /> */}
+        <h1 className={styles.text}>{article.title || 'preview.noTitle'}</h1>
+
+        <div className={styles.tagsDate}>
+          <Tags tags={article.tags} tagClassName={styles.tag} />
 
           <div className={styles.date}>
             {article.content.publishDate
@@ -34,11 +37,6 @@ export default function Article({ article }) {
               : formatDate(new Date())}
           </div>
         </div>
-        <h1 className={styles.text}>{article.title || 'preview.noTitle'}</h1>
-      </div>
-
-      <div className={styles.subtitle}>
-        {article.content.subtitle}
       </div>
 
       {/* <div className={styles.image}>

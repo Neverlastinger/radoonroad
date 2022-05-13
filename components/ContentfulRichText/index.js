@@ -1,5 +1,5 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { BLOCKS } from '@contentful/rich-text-types';
+import { BLOCKS, INLINES } from '@contentful/rich-text-types';
 import cn from 'classnames';
 import styles from './index.module.scss';
 
@@ -39,16 +39,40 @@ const renderOptions = (links) => {
             <p>
               <a href={asset.url} target="_blank" rel="noreferrer">{asset.title}</a>
             </p>
-          )
+          );
         }
 
         return (
           <div data-richimage className={styles.image}>
-            <img src={asset.url} alt="" />
-            <div className={styles.description}>{asset.description}</div>
+            <a href={asset.url} target="_blank" rel="noreferrer">
+              <img src={asset.url} alt="" />
+              <div className={styles.description}>{asset.title}</div>
+            </a>
           </div>
         );
       },
+      [INLINES.HYPERLINK]: ({ data }, children) => (
+        data.uri.startsWith('https://www.youtube.com/embed/')
+          ? (
+            <iframe
+              width="100%"
+              height="450"
+              src={data.uri}
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          ) : (
+            <a
+              href={data.uri}
+              target="_blank"
+              rel="noreferrer"
+            >
+              __ {children}
+            </a>
+          )
+      )
     },
     renderText: (text) => (
       text.split('\n').flatMap((t, i) => (
