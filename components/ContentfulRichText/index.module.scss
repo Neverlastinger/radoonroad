@@ -1,0 +1,134 @@
+@import 'vars.scss';
+
+.richText {
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 30px;
+  color: #212529;
+
+  @media (max-width: $mobile-width) {
+    font-size: 16px;
+    line-height: 28px;
+  }
+
+  p {
+    margin-bottom: 32px;
+  }
+
+  h1 {
+    margin: 0 0 48px 0;
+    font-weight: 600;
+    font-size: 64px;
+    line-height: 80px;
+
+    @media (max-width: $mobile-width) {
+      margin: 24px 0 18px 0;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 32px;
+    }
+  }
+
+  h2 {
+    margin: 40px 0 24px 0;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 48px;
+
+    @media (max-width: $mobile-width) {
+      margin: 20px 0 16px 0;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 24px;
+    }
+  }
+
+  h3 {
+    margin: 32px 0 20px 0;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 40px;
+
+    @media (max-width: $mobile-width) {
+      margin: 20px 0 16px 0;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 20px;
+    }
+  }
+
+  h4 {
+    margin: 24px 0 18px 0;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 32px;
+
+    @media (max-width: $mobile-width) {
+      margin: 20px 0 16px 0;
+      font-weight: 500;
+      font-size: 17px;
+      line-height: 20px;
+    }
+  }
+
+  h5 {
+    margin: 20px 0 16px 0;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+
+    @media (max-width: $mobile-width) {
+      margin: 20px 0 16px 0;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+
+  h6 {
+    margin: 20px 0 16px 0;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 20px;
+
+    @media (max-width: $mobile-width) {
+      margin: 20px 0 16px 0;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+
+  ul {
+    list-style-type: disc;
+  }
+
+  ul,
+  ol {
+    padding: 0;
+    margin-left: 32px;
+
+    @media (max-width: $mobile-width) {
+      margin-left: 20px;
+    }
+  }
+
+  a {
+    color: black;
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .image {
+    .description {
+      margin-bottom: 24px;
+      text-align: center;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+}

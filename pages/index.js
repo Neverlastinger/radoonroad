@@ -3,5 +3,5 @@ export default function Home() {
     <div>
       radoonroad.com
     </div>
-  )
+  );
 }
