@@ -4,8 +4,6 @@ import { fetchArticleBySlug } from 'fetch';
 import Custom404 from 'pages/404';
 
 function ArticlePreviewPage({ article, errors }) {
-  console.log('article', article);
-
   if (!article || errors) {
     return <Custom404 errors={errors} />;
   }

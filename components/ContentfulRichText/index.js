@@ -45,7 +45,7 @@ const renderOptions = (links) => {
         return (
           <div data-richimage className={styles.image}>
             <a href={asset.url} target="_blank" rel="noreferrer">
-              <img src={asset.url} alt="" />
+              <img src={`${asset.url}?w=800`} alt="" />
               <div className={styles.description}>{asset.title}</div>
             </a>
           </div>
