@@ -3,6 +3,7 @@ import styles from './index.module.scss';
 import { formatDate } from 'app';
 import ContentfulRichText from 'components/ContentfulRichText';
 import Tags from 'components/Tags';
+import CoverPhoto from 'components/CoverPhoto';
 
 export default function Article({ article }) {
   const canonicalUrl = `https://radoonroad.com/${article.slug}`;
@@ -10,9 +11,7 @@ export default function Article({ article }) {
   return (
     <>
       {article.coverPhoto && (
-        <div className={styles.mainCoverImage}>
-          <img src={article.coverPhoto.url} alt={article.coverPhoto.title} />
-        </div>
+        <CoverPhoto url={article.coverPhoto.url} title={article.coverPhoto.title} />
       )}
 
       <div className={styles.article}>

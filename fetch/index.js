@@ -1,10 +1,17 @@
 import performContentfulRequest from './performContentfulRequest';
 import articleBySlugQuery from './graphql/articleBySlug';
+import homePageArticlesQuery from './graphql/homePageArticles';
 
 const fetchContentfulArticleBySlug = async ({ slug, preview }) => (
   performContentfulRequest({
     query: articleBySlugQuery(slug, preview),
     preview
+  })
+);
+
+const fetchContentfulHomePageArticles = async () => (
+  performContentfulRequest({
+    query: homePageArticlesQuery()
   })
 );
 
@@ -29,6 +36,19 @@ export const fetchArticleBySlug = async ({ slug, preview }) => {
 
   return {
     article: article || null, // nextjs cannot accept undefined values for static generation serialization, don't play smart by removing this code
+    errors: errors || null
+  };
+};
+
+export const fetchHomePageArticles = async () => {
+  const { result } = await fetchContentfulHomePageArticles();
+
+  const { data, errors } = result;
+
+  const articles = data && data.articleCollection.items;
+
+  return {
+    articles: articles || null, // nextjs cannot accept undefined values for static generation serialization, don't play smart by removing this code
     errors: errors || null
   };
 };

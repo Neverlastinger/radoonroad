@@ -3,7 +3,7 @@ import Page from 'components/Page';
 import { fetchArticleBySlug } from 'fetch';
 import Custom404 from 'pages/404';
 
-function ArticlePreviewPage({ article, errors }) {
+function ArticlePage({ article, errors }) {
   if (!article || errors) {
     return <Custom404 errors={errors} />;
   }
@@ -28,4 +28,4 @@ export async function getServerSideProps({ params }) {
   };
 }
 
-export default ArticlePreviewPage;
+export default ArticlePage;

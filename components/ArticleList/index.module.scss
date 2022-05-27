@@ -1,0 +1,11 @@
+@import 'vars.scss';
+
+.articleList {
+  display: flex;
+  justify-content: center;
+  padding: 112px 0;
+
+  @media (max-width: $mobile-width) {
+    padding: 32px 0;
+  }
+}
