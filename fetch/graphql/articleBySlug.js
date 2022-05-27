@@ -9,6 +9,11 @@ const articleBySlug = (slug, preview = false) => (
       items {
         title
         slug
+        description
+        coverPhoto {
+          url,
+          title
+        }
         sys {
           firstPublishedAt
           publishedAt

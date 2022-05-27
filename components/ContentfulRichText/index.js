@@ -1,6 +1,7 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { BLOCKS, INLINES } from '@contentful/rich-text-types';
 import cn from 'classnames';
+import ArticleThumbnail from 'components/ArticleThumbnail';
 import styles from './index.module.scss';
 
 const renderOptions = (links) => {
@@ -63,10 +64,11 @@ const renderOptions = (links) => {
         const entry = entryMap.get(node.data.target.sys.id);
 
         return (
-          // eslint-disable-next-line react/jsx-no-target-blank
-          <a href={`/${entry.slug}`} target="_blank" data-embed-entry="article">
-            {entry.title}
-          </a>
+          <ArticleThumbnail
+            slug={entry.slug}
+            imgUrl={entry.coverPhoto.url}
+            title={entry.title}
+          />
         );
       },
       [INLINES.HYPERLINK]: ({ data }, children) => (
