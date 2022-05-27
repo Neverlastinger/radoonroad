@@ -69,7 +69,7 @@ const renderOptions = (links) => {
               target="_blank"
               rel="noreferrer"
             >
-              __ {children}
+              {children}
             </a>
           )
       )
