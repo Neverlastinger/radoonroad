@@ -5,6 +5,27 @@
   margin-bottom: 112px;
   max-width: 800px;
 
+  [data-embed-entry] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 12px;
+    max-width: 300px;
+    height: 300px;
+    border: 1px solid #9e6700;
+    border-radius: 12px;
+    text-align: center;
+    text-decoration: none;
+    color: #9e6700;
+
+    @media (max-width: 450px) {
+      margin: 0 auto;
+      max-width: 90vw;
+      height: 90vw;
+    }
+  }
+
   .title {
     margin-top: 80px;
 

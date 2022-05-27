@@ -1,6 +1,28 @@
 export const richText = `
   json
   links {
+    entries {
+      inline {
+        sys {
+          id
+        }
+        __typename
+        ... on Article {
+          title
+          slug
+        }
+      }
+      block {
+        sys {
+          id
+        }
+        __typename
+        ... on Article {
+          title
+          slug
+        }
+      }
+    }
     assets {
       block {
         sys {

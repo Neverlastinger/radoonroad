@@ -5,11 +5,18 @@ import styles from './index.module.scss';
 
 const renderOptions = (links) => {
   const assetMap = new Map();
+  const entryMap = new Map();
 
   if (links) {
     // eslint-disable-next-line no-restricted-syntax
     for (const asset of links.assets.block) {
       assetMap.set(asset.sys.id, asset);
+    }
+
+    // loop through the block linked entries and add them to the map
+    // eslint-disable-next-line no-restricted-syntax
+    for (const entry of links.entries.block) {
+      entryMap.set(entry.sys.id, entry);
     }
   }
 
@@ -49,6 +56,17 @@ const renderOptions = (links) => {
               <div className={styles.description}>{asset.title}</div>
             </a>
           </div>
+        );
+      },
+      [BLOCKS.EMBEDDED_ENTRY]: (node) => {
+        // find the entry in the entryMap by ID
+        const entry = entryMap.get(node.data.target.sys.id);
+
+        return (
+          // eslint-disable-next-line react/jsx-no-target-blank
+          <a href={`/${entry.slug}`} target="_blank" data-embed-entry="article">
+            {entry.title}
+          </a>
         );
       },
       [INLINES.HYPERLINK]: ({ data }, children) => (
