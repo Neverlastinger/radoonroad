@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import NextLink from 'components/NextLink';
+// import NextLink from 'components/NextLink';
 import styles from './index.module.scss';
 
 /**
@@ -23,13 +23,14 @@ export default function Tags({ tags, className, tagClassName, onTagClick, active
 
 function Tag({ tag, className, onClick, active }) {
   return (
-    <NextLink
+    // eslint-disable-next-line jsx-a11y/no-static-element-interactions
+    <div
       href={`/t/${tag.slug}`}
       className={cn(styles.tag, { [styles.active]: !!active, [styles.noMobileHover]: !!onClick, [className]: !!className })}
       data-testid={`tag-${tag}`}
       onClick={onClick && ((e) => { onClick(e, tag); })}
     >
       {tag.name}
-    </NextLink>
+    </div>
   );
 }
