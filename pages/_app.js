@@ -6,7 +6,7 @@ function App({ Component, pageProps }) {
     <>
       <Head>
         <meta charSet="utf-8" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -16,8 +16,8 @@ function App({ Component, pageProps }) {
 
         <meta property="og:type" key="og:type" content="website" />
         <meta property="og:title" key="og:title" content="radoonroad" />
-        <meta property="og:description" key="og:description" content="Разкази за пътувания от radoonroad" />
-        <meta name="description" content="Разкази за пътувания от radoonroad" />
+        <meta property="og:description" key="og:description" content="Разкази за преживявания на път от radoonroad" />
+        <meta name="description" content="Разкази за преживявания на път от radoonroad" />
         {/* <meta property="og:image" key="og:image" content="https://arcane.no/research/favicon-1232x1232.png" /> */}
         <meta property="og:url" key="og:url" content="https://radoonroad.com" />
 
