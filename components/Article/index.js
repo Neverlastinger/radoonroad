@@ -24,7 +24,7 @@ export default function Article({ article }) {
           <meta property="og:type" key="og:type" content="article" />
           <meta property="og:url" key="og:url" content={canonicalUrl} />
           {article.coverPhoto && (
-            <meta property="og:image" key="og:image" content={article.coverPhoto.url} />
+            <meta property="og:image" key="og:image" content={`${article.coverPhoto.url}?w=1024`} />
           )}
           <meta property="og:description" key="og:description" content={article.description} />
           <meta property="article:published_time" key="article:published_time" content={article.sys.firstPublishedAt} />
