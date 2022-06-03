@@ -2,6 +2,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { BLOCKS, INLINES } from '@contentful/rich-text-types';
 import cn from 'classnames';
 import ArticleThumbnail from 'components/ArticleThumbnail';
+import InstagramPost from 'components/InstagramPost';
 import styles from './index.module.scss';
 
 const renderOptions = (links) => {
@@ -83,6 +84,8 @@ const renderOptions = (links) => {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />
+          ) : data.uri.startsWith('https://www.instagram.com/p/') ? (
+            <InstagramPost url={data.uri} />
           ) : (
             <a
               href={data.uri}
