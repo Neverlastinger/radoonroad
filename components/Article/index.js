@@ -38,9 +38,7 @@ export default function Article({ article }) {
             <Tags tags={article.tags} tagClassName={styles.tag} />
 
             <div className={styles.date}>
-              {article.content.publishDate
-                ? formatDate(new Date(article.content.publishDate))
-                : formatDate(new Date())}
+              {article.sys.firstPublishedAt && formatDate(new Date(article.sys.firstPublishedAt))}
             </div>
           </div>
         </div>
