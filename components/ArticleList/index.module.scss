@@ -1,11 +1,16 @@
 @import 'vars.scss';
 
 .articleList {
-  display: flex;
+  display: grid;
   justify-content: center;
+  grid-auto-flow: column;
+  column-gap: 112px;
+  // row-gap: 64px;
+  align-items: center;
   padding: 112px 0;
 
-  @media (max-width: $mobile-width) {
+  @media (max-width: 980px) {
+    grid-auto-flow: row;
     padding: 32px 0;
   }
 }
