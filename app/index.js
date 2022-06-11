@@ -6,4 +6,4 @@ export const formatDate = (date) => (
   format(new Date(date), DATE_FORMAT)
 );
 
-export const REVALIDATE_INTERVAL = 60 * 60;
+export const REVALIDATE_INTERVAL = 60 * 60; // 1 hour
