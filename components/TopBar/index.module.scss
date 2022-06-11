@@ -28,8 +28,9 @@ $top-bar-height: 60px;
     background-color: hsla(0, 0%, 0%, 0);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0);
 
-    &.visibleMobile {
+    &.visibleOnPage {
       background-color: hsla(0, 0%, 0%, 0.9);
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     }
   }
 
