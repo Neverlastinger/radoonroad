@@ -7,10 +7,10 @@
   column-gap: 112px;
   // row-gap: 64px;
   align-items: center;
-  padding: 112px 0;
+  padding: 168px 0 112px 0;
 
   @media (max-width: 980px) {
     grid-auto-flow: row;
-    padding: 32px 0;
+    padding: 112px 0 32px 0;
   }
 }

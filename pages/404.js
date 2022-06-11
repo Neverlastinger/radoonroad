@@ -1,7 +1,9 @@
+import Page from 'components/Page';
+
 export default function Custom404({ errors }) {
   return (
-    <div>
-      <div>
+    <Page visibleOnPageTopBar>
+      <div style={{ marginTop: '260px', fontSize: '20px' }}>
         404 | Page Not Found
       </div>
       {errors && (
@@ -11,6 +13,6 @@ export default function Custom404({ errors }) {
           ))}
         </ul>
       )}
-    </div>
+    </Page>
   );
 }

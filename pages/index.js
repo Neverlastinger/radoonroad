@@ -9,7 +9,7 @@ export default function Home({ articles, errors }) {
   }
 
   return (
-    <Page>
+    <Page visibleOnPageTopBar>
       {/* <CoverPhoto
         url="https://images.ctfassets.net/cs8r2zcz4sk2/4NaNW4NhwSBFoy4hJnweXF/4f72dc4bb43ed8e6cf1bd6eba34310ef/Indonesia-cover.jpg"
         title="radoonroad cover"
