@@ -2,32 +2,45 @@
 
 .footer {
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  padding: 12px;
+  padding: 0 24px;
   width: 100%;
-  height: 128px;
-  background-color: black;
+  height: $footer-height;
+  background-color: #48322c;
   font-size: 12px;
 
-  @media (max-width: $mobile-width) {
-    font-size: 16px;
-  }
-
   .item {
+    margin-right: 24px;
+
+    &:last-child {
+      margin-right: 0px;
+    }
+
     a {
       display: inline-block;
       padding: 2px;
-      color: hsla(0, 0%, 100%, 0.6);
+      color: hsla(0, 0%, 100%, 0.8);
       transition: all 0.2s;
 
       @media (max-width: $mobile-width) {
         padding: 4px;
       }
 
+      img {
+        width: 24px;
+        height: 24px;
+        transition: all 0.2s;
+        filter: invert(20%);
+      }
+
       &:hover {
-        color: hsla(0, 0%, 100%, 0.8);
+        color: hsla(0, 0%, 100%, 1);
+
+        img {
+          filter: none;
+        }
       }
     }
   }

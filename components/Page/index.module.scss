@@ -3,7 +3,7 @@
 .page {
   box-sizing: border-box;
   width: 100%;
-  min-height: calc(100vh - 128px);
+  min-height: calc(100vh - $footer-height);
   padding: 0 32px;
 
   @media (max-width: $mobile-width) {
